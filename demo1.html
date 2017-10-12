@@ -23,19 +23,19 @@
 
 <script type="text/babel">
     var HelloWorld = React.createClass({
-        handleClickOnTitle (e) {
-            console.log(this)
-        },
-        render () {
+        render: function() {
             return (
-                    <h1 onClick={this.handleClickOnTitle.bind(this)}>React 小书</h1>
-            )
+                    <div>Hello, {this.props.name1}, {this.props.name2}</div>
+            );
         }
     });
 
-
+    var props = {
+        name1: 'Jack',
+        name2: 'Tom'
+    };
     ReactDOM.render(
-            <HelloWorld/>,
+            <HelloWorld {...props}/>,
         document.getElementById('content')
     )
 
